@@ -1,0 +1,19 @@
+---
+name: 📦 Build U-Boot
+on: [push]
+jobs:
+  build-raspi4:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          submodules: "true"
+
+      - name: Build U-Boot
+        run: docker-compose run -e BOARD_CONFIG=rpi_4_defconfig --rm uboot
+
+      - name: Upload U-Boot binaries
+        uses: actions/upload-artifact@v2
+        with:
+          name: U-Boot binary
+          path: output/u-boot.bin
