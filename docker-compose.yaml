@@ -1,0 +1,8 @@
+---
+version: "3.4"
+services:
+  uboot:
+    build:
+      context: .
+    volumes:
+      - ./output:/opt/output
