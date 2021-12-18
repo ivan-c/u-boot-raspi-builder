@@ -1,4 +1,2 @@
-# from Ubuntu
-rpi-8gb-pci.patch
 
 enable_proxyDHCP.patch
