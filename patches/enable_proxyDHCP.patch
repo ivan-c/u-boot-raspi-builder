@@ -1,0 +1,13 @@
+Author: Ivan Cvitkovic <icvitkovic@gmail.com>
+Description: Enable proxyDHCP
+ Enable proxyDHCP feature for all boards, allowing U-Boot to receive PXE responses from a secondary DHCP server
+--- a/net/Kconfig
++++ b/net/Kconfig
+@@ -76,6 +76,7 @@ config TFTP_WINDOWSIZE
+ 
+ config SERVERIP_FROM_PROXYDHCP
+ 	bool "Get serverip value from Proxy DHCP response"
++	default y
+ 	help
+ 	  Allows bootfile config to be fetched from Proxy DHCP server
+ 		while IP is obtained from main DHCP server.
