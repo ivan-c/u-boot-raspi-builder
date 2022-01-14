@@ -17,3 +17,11 @@ jobs:
         with:
           name: U-Boot binary
           path: output/u-boot.bin
+
+      - name: Create Release and Attach Artifacts
+        uses: softprops/action-gh-release@v1
+        # run only on tags
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: output/u-boot.bin
+          prerelease: true
